@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -114,7 +114,7 @@
     \textbf{#1} & \hfill &  #2 \\[3.75pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=$\bullet$]
     }
     {
     \end{itemize}
@@ -161,55 +161,95 @@ This CV can also be automatically complied and published using GitHub Actions. F
 %Experience
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
+\textbf{Global Quality Corp – Covington, KY} \\[3.75pt]
+\textbf{Software Engineer — AI \& Full Stack Product Development} \hfill \textbf{Aug 2025 - current} \\[3.75pt]
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=$\bullet$]
+\item Built and deployed scalable data-driven web platforms using React, .NET, and Azure DevOps
+\item Architected and optimized modular front-end frameworks using React (migrated 18→19), Vite, improving load performance by 35\% and ensuring consistent, reusable UI design across modules
+\item Engineered full-stack integrations between React clients and .NET APIs, implementing secure REST endpoints and data models that enhanced reliability and reduced integration errors by 40\%
+\item Automated CI/CD pipelines in Azure DevOps, integrating test and deployment workflows to reduce manual deployment time by 70\% and maintain version consistency across staging and production
+\item Developed interactive visualization frameworks using ESRI ArcGIS JavaScript SDK (2D/3D) and React Flow, enabling real-time analytical dashboards and dynamic system monitoring
+\item Implemented time-series forecasting pipelines with FastAPI and scikit-learn, adapting ML models to smaller datasets for accurate short-term operational predictions
+\item Collaborated in agile sprints with developers, QA, and product teams, applying SOLID design principles, Git-based workflows, and peer reviews to deliver scalable, maintainable, and high-quality releases
+\end{itemize}
+\end{minipage}
 
+\textbf{Marven Data Systems – Hyderabad, India} \\[3.75pt]
+\textbf{Software Developer} \hfill \textbf{Jun 2023 – Jul 2024} \\[3.75pt]
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=$\bullet$]
+\item Engineered full-stack applications using .NET Core, C\#, and SQL Server, improving backend scalability and reducing API response latency through optimized schema design
+\item Built real-time asset tracking and monitoring systems with Python background services on Windows and Linux, a feature that brought 3 new enterprise clients through improved live telemetry and reliability
+\item Deployed and maintained production environments in Azure, automating CI/CD pipelines with Azure DevOps and Docker, and tuning database operations to reduce deployment cycles by 35\%
+\item Implemented Single Sign-On (SSO) via Identity Server, strengthening authentication and centralizing user access across distributed systems
+\item Led testing and code reviews, mentoring junior developers and maintaining clean, production-grade code practices across releases
+\end{itemize}
+\end{minipage}
 
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
+\textbf{Software Development Intern} \hfill \textbf{May 2021 – Jun 2023} \\[3.75pt]
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=$\bullet$]
+\item Designed responsive web interfaces using Bootstrap, HTML5, and JavaScript, improving usability and reducing navigation time by 40\%
+\item Developed RESTful APIs in .NET Core for secure communication between front-end and backend services
+\item Automated reporting workflows with Python scripts, cutting manual data-prep effort by 45\%
+\item Assisted in database design and testing, gaining foundational experience in SQL Server optimization and QA workflows
+\end{itemize}
+\end{minipage}
   
 %Projects
-\section{Projects}
+\section{Project Highlights}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{Movie Explorer – React Frontend App} & \hfill \textbf{Apr 2025} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Built a mobile-first, JavaScript/React-based movie discovery app consuming REST APIs from TMDb, with trending sections, search filters, and scrollable grids.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Real-Time Face Mask Detection (Deep Learning)} & \hfill \textbf{Nov 2021 – Feb 2022} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a TensorFlow-based ML model in Python achieving 90\%+ accuracy for real-time mask detection, integrating image processing and advanced cost functions.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{AI-Driven Supply Chain Management (IoT \& Python)} & \hfill \textbf{Published in IEEE, 2023} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a Python + SQL-based supply chain management software integrating GPS tracking with IoT devices for end-to-end goods tracking.}  \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+\textbf{Master of Engineering in Computer Science} \\
+\textit{University of Cincinnati, OH | Aug 2024 - Dec 2025 | GPA: 3.87} 
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
+\textbf{Bachelor of Technology in Electronics \& Communication Engineering} \\
+\textit{SASTRA Deemed University, India | Jun 2018 - Aug 2022} \\
 
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
 \section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+
+\textbf{Supply Chain Management In Manufacturing Industry Using Internet Of Things} \hfill \textbf{Mar 2022 – Aug 2022} \\
+\textit{Sastra Deemed University} 
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=$\bullet$]
+\item Developed a Supply Chain Management software using Python and SQL, integrating GPS tracking with Ublox neo 6m and NodeMCU ESP8266 for end-to-end goods tracking, published in IEEE during the 2023 International Conference on Computer Communication and Informatics
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
-\end{tabularx}
+\section{Core Technical Skills}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=$\bullet$]
+\item \textbf{Programming:} JavaScript (ES6+), Python, C\#, .NET Core, ASP.NET MVC, REST APIs
+\item \textbf{Frontend:} React, HTML5, CSS3, Bootstrap, Tailwind, jQuery
+\item \textbf{Backend \& Databases:} SQL Server, Entity Framework, T-SQL, Stored Procedures, Views, Triggers
+\item \textbf{AI/ML \& Analytics:} TensorFlow, Deep Learning Models, Predictive Dashboards
+\item \textbf{Cloud \& DevOps:} Azure, CI/CD Pipelines, IIS Deployment, SSL Configuration
+\item \textbf{Tools \& Version Control:} Git, GitHub, Bitbucket, Jira, Agile/Scrum
+\end{itemize}
 
 \vfill
 \center{\footnotesize Last updated: \today}
