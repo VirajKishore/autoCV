@@ -1,0 +1,68 @@
+name: tailor
+
+on:
+  workflow_dispatch:
+    inputs:
+      jd:
+        description: "Paste the Job Description text"
+        required: true
+      instructions:
+        description: "Optional extra guidance (e.g., emphasize Azure DevOps)"
+        required: false
+      slug:
+        description: "Optional slug for versioned tailored PDF (e.g., company-role)"
+        required: false
+        default: latest
+
+jobs:
+  tailor:
+    runs-on: ubuntu-latest
+    env:
+      DIR: .
+      BASE_FILE: cv
+      TAILORED_FILE: cv-tailored
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai==1.* pydantic==2.*
+
+      - name: Tailor resume sections
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python scripts/tailor.py \
+            --jd "${{ github.event.inputs.jd }}" \
+            --instructions "${{ github.event.inputs.instructions }}" \
+            --input-tex "${{ env.BASE_FILE }}.tex" \
+            --output-tex "${{ env.TAILORED_FILE }}.tex"
+
+      - name: Compile tailored LaTeX
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: ${{ env.TAILORED_FILE }}
+          working_directory: ${{ env.DIR }}
+
+      - name: Prepare tailored publish directory
+        run: |
+          mkdir -p github_deploy/tailored
+          cp "${{ env.DIR }}/${{ env.TAILORED_FILE }}.pdf" "github_deploy/tailored/cv-latest.pdf"
+          if [ -n "${{ github.event.inputs.slug }}" ]; then
+            cp "${{ env.DIR }}/${{ env.TAILORED_FILE }}.pdf" "github_deploy/tailored/cv-${{ github.event.inputs.slug }}.pdf"
+          fi
+
+      - name: Publish tailored PDFs
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./github_deploy
+          publish_branch: build
+          keep_files: true
